@@ -7,7 +7,7 @@ class City:
     self.lat = lat
     self.lon = lon
 
-  def __repr__(self):
+  def __str__(self):
     return f"{self.name}, {self.lat}, {self.lon}"
 
 # We have a collection of US cities with population over 750,000 stored in the
@@ -110,7 +110,6 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # the specified coordinates.
   for city in cities:
     if float(city.lat) >= float(lower_lat) and float(city.lat) <= float(upper_lat) and float(city.lon) > float(lower_lon) and float(city.lon) < float(upper_lon):
-      print(city)
       within.append(City(str(city.name), float(city.lat), float(city.lon)))
 
   return within
