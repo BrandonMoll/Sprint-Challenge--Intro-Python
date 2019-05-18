@@ -110,10 +110,10 @@ def cityreader_stretch(lat1, lon1, lat2, lon2, cities=[]):
   # the specified coordinates.
   for city in cities:
     if float(city.lat) >= float(lower_lat) and float(city.lat) <= float(upper_lat) and float(city.lon) > float(lower_lon) and float(city.lon) < float(upper_lon):
-      # print(city)
-      within.append(City(city.name, city.lat, city.lon))
+      print(city)
+      within.append(City(str(city.name), float(city.lat), float(city.lon)))
 
   return within
 
-print(cityreader_stretch(40, -50, 12, -120, cities))
-# cityreader_stretch(45, -100, 32, -120, cities)
+# print(cityreader_stretch(40, -50, 12, -120, cities))
+cityreader_stretch(45, -100, 32, -120, cities)
